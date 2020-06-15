@@ -8,11 +8,13 @@ function App() {
  let value = useState (48);
   
   return (
+    <ValueContext.Provider value = {value}>
     <div>
       Hello World
       <Parent></Parent>
-      <button onClick = {()=>setNumber(++number)}>Update Number</button>
+    
     </div>
+    </ValueContext.Provider>
   );
 }
 
