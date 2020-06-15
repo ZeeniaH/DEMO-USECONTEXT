@@ -1,15 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useReducer } from 'react';
 import './App.css';
 import ValueContext from './ValueContext';
 
 function Child() {
 
-    let value = useContext (ValueContext);
+    let Value = useContext (ValueContext);
+    let updateValue = Value[1];
   return (
     <div>
 
-        Child number {value[0]}
-        <button onClick = {()=>{value [1](++value[0])}}> Update Value </button>     
+        Child number {Value[0]}
+        <button onClick = {()=>{updateValue(++Value[0])}}> Update Value </button>     
     </div>
   );
 }
